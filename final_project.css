@@ -35,18 +35,20 @@ body {
     margin-bottom: 2rem;
 }
 
-.timeevent{
-    border: 1px solid gray;
-    display: flex;
+.div-table-row{
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.div-table-col_task,.div-table-col_start,.div-table-col_end,.timeevent_actions{
+.div-table-col_task,.div-table-col_start,.div-table-col_end{
+    /*border: 1px solid gray;*/
     float: left;
-    /* fix for  buggy browsers */
     display: table-cell;
     width: 190px;
-
+}
+.timeevent_actions{
+    float: left;
+    display: table-cell;
+    width: 190px;
 }
 
