@@ -51,11 +51,10 @@ class TimeEventModel{
         return this.#time;
     }
 
-    //{task:"task"}
     addTime(newTime) {
-        return API.postTimeEvent(newTime).then((newTime) => {
-            this.#time.push(newTime);
-            return newTime;
+        return API.postTimeEvent(newTime).then((addedTime) => {
+            this.#time.push(addedTime);
+            return addedTime;
         });
     }
 
@@ -103,22 +102,22 @@ class TimeEventView{
     timeElem.classList.add("div-table-row");
     timeElem.setAttribute("id", "time"+time.id);
 
-   const timeTable=document.querySelector("table");
+   const timeTable=document.createElement("table");
    timeTable.classList.add("time-table");
 
-   const timeTr=document.querySelector("tr");
+   const timeTr=document.createElement("tr");
    timeTr.classList.add("time-tr");
 
-   const timeTd=document.querySelector("td");
+   const timeTd=document.createElement("td");
    timeTd.classList.add("time-td-name");
 
-   const timeTd2=document.querySelector("td");
+   const timeTd2=document.createElement("td");
    timeTd2.classList.add("time-td-start");
 
-   const timeTd3=document.querySelector("td");
+   const timeTd3=document.createElement("td");
    timeTd3.classList.add("time-td-end");
 
-   const timeTd4=document.querySelector("td");
+   const timeTd4=document.createElement("td");
    timeTd4.classList.add("time-td-bth");
 
    const timeTaskElem = document.createElement("div");
@@ -155,6 +154,7 @@ class TimeEventView{
 
    timeElem.append(timeTable);
    this.timeList.append(timeElem);
+
 /*        return `<div class="div-table-row" id="${time.id}">
                   <table class="time-table">
                     <tr class="time-tr">
