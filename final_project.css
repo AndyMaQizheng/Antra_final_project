@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+.timeEvent-app{
+    border: 1px solid springgreen;
+    text-align: center;
+    width: 800px;
+    margin: auto;
+    padding: 3rem;
+}
+
+.heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align:left;
+    width:100%;
+    font-size: 20px;
+    padding: 0;
+
+}
+.timeEvent__form{
+    margin-bottom: 2rem;
+}
+
+.timeevent{
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.div-table-col_task,.div-table-col_start,.div-table-col_end,.timeevent_actions{
+    float: left;
+    /* fix for  buggy browsers */
+    display: table-cell;
+    width: 190px;
+
+}
+
