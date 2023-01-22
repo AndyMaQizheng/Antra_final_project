@@ -119,6 +119,7 @@ class TimeEventView{
 
    const timeTd4=document.createElement("td");
    timeTd4.classList.add("time-td-bth");
+    timeTd4.setAttribute("id", "time"+time.id);
 
    const timeTaskElem = document.createElement("div");
    timeTaskElem.classList.add("div-table-col_task");
@@ -221,14 +222,18 @@ class TimeEventController{
 
     setUpRemoveEvent() {
         this.view.timeList.addEventListener("click",(e)=>{
-            e.preventDefault();
             if (e.target.classList.contains("time__btn-delete")){
-                const domID = e.target.parentNode.parentNode.getAttribute("id");
-                const id = domID.substring(4);
+                console.log(e.target.parentNode.parentNode)
+                const _id=e.target.parentNode.parentNode.getAttribute("id");
+                //const domID = e.target.parentNode.parentNode.getAttribute("id");
+                const id = _id.substring(4);
                 console.log(id);
                 this.model.removeTime(id).then((data) => {
-                    this.view.removeTimeElem(domID)
+                    this.view.removeTimeElem(_id)
                 });
+            }
+            if(e.target.classList.contains("time__btn-edit")){
+
             }
         })
     }
